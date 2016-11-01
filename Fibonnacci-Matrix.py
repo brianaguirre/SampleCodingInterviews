@@ -11,9 +11,9 @@ def fibonnacci_n(n):
     sqrtFive = math.pow(5, 1/2)
 
     answer = (sqrtFive/5)*((1+sqrtFive)/2)**(n)
-    
+
     return round(answer)
 
 
-print(fibonnacci_n(20000000))
+print(fibonnacci_n(23))
 
