@@ -6,8 +6,13 @@ __twitter__ = 'bnap48'
 REQUIREMENTS:
 Given three int numbers, calculate which is the most late valid time you can write out of them.
 EX: (1, 2, 3, 4) -> 23:41
-It has to be valid. If no valid time can be made with the four numbers, return 'NO VALID TIME'
+It has to be valid. If no valid time can be made with the four numbers, return 'NO SOLUTION'
 Print should be in format AB:CD, where AB and CD are both string numbers.
+
+Assume numbers are positive integers.
+Thus A, B, C, D >=0
+
+NOTE: Don't worry about time or memory complexity, concentrate on correctness.
 
 '''
 
@@ -47,7 +52,6 @@ def lateTimeCalculator(A, B, C, D):
     #Create a Dictionary that has all the combinations above: Hours:Minutes
     hrsMins = []
     choose = [A, B, C, D]
-    times = []
 
     #CHOICES
     choseAB = [C, D]
@@ -187,7 +191,7 @@ def lateTimeCalculator(A, B, C, D):
 
     #Find largest one:
     for i in range(0, len(hours)):
-        if hours[i] < 24 and mins[i] < 60:
+        if hours[i] < 24 and (mins[i] < 60):
             hrsMins.append((hours[i],mins[i]))
 
     hrsMins.sort()
@@ -196,9 +200,9 @@ def lateTimeCalculator(A, B, C, D):
     solution = ""
 
     if len(hrsMins)<=0:
-        solution = "NO SOLUTION. ALL TIMES ARE INVALID."
+        solution = "NO SOLUTION."
     else:
-        solution = str(hrsMins[0])
+        solution = str(hrsMins[0][0]) + ":" + str(hrsMins[0][1])
 
 
     return solution
@@ -206,3 +210,7 @@ def lateTimeCalculator(A, B, C, D):
 
 
 print(lateTimeCalculator(2,2,3,5))
+print(lateTimeCalculator(1,1,2,4))
+print(lateTimeCalculator(1,1,1,1))
+print(lateTimeCalculator(9,9,5,4))
+print(lateTimeCalculator(0,0,0,0))
