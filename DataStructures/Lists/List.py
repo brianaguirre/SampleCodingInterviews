@@ -11,7 +11,7 @@ class List:
 
     head = Node()
     tail = Node()
-    itr = Itr()
+    itr = Itr(head)
 
     node_list.append(head)
     node_list.append(tail)
@@ -19,7 +19,7 @@ class List:
 
     def __init__(self):
         self.length = 0
-        self.itr.node = self.head
+        self.itr = Itr(self.head)
         self.head.next = self.tail
         self.tail.prev = self.head
 
@@ -60,8 +60,11 @@ class List:
 
     def print_list(self):
         self.move_itr_first()
-        while self.itr.get_current_node() != self.tail:
+        while self.itr != self.tail:
+            print(self.itr.get_data())
+            self.itr = self.itr.next
 
-            self.itr.node = self.itr.get_current_node()
-            print(self.itr.get_current_node())
+
+
+
 
