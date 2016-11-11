@@ -2,16 +2,16 @@ __author__ = 'BrianAguirre'
 
 from DataStructures.Lists.Node import Node
 
-class Itr(object):
+class Itr():
 
     node = Node()
     next_node = None
     prev_node = None
 
-    def __init__(self):
-        self.node = Node()
-        self.next_node = Node()
-        self.prev_node = Node()
+    def __init__(self, curr_node):
+        self.node = curr_node
+        self.next_node = curr_node.next
+        self.prev_node = curr_node.prev
 
     def move_right(self):
         self.node = self.node.get_next()
@@ -25,6 +25,7 @@ class Itr(object):
 
     def get_current_node(self):
         return self.node
+
 
 
 
