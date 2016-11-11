@@ -9,10 +9,6 @@ my_list = List()
 my_list.insert_end(1)
 my_list.insert_end(2)
 
-print(my_list.tail.prev.data)
-print(my_list.tail.prev.prev.data)
-
-
 my_list.print_list()
 
 
