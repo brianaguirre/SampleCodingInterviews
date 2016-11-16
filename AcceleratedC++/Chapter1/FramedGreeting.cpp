@@ -34,5 +34,7 @@ int main(){
   std::cout << second << std::endl;
   std::cout << first << std::endl;
 
+  //NOTE: Constructor used to initiate strings: spaces, second, first
+
   return 0;
 }
