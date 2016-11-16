@@ -7,11 +7,10 @@
 //
 //  A small C++ program.
 
-int main(){}
+int main(){
+	
 
-/**{
-
-    std::cout << "Hello, World!\n" << std::endl;
+	std::cout << "Hello, World!\n" << std::endl;
     
     //TEST PRINT STATEMENTS:
     
@@ -20,5 +19,5 @@ int main(){}
     std::cout << "\t Brian Aguirre was born on a Saturday." << std::endl;
     
     return 0;
+
 }
-**/
