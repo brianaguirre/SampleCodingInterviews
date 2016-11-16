@@ -36,7 +36,7 @@ int main(){
 
   // 1-2
   const std::string exclam = "!";
-  const std::string message1 = "Hello" + ", world" + exclam;      //Fails 
+  // const std::string message1 = "Hello" + ", world" + exclam;      //Fails 
 
   // Why?
   // Because of left-associative property: s.t. ("Hello" + ", world") + exclam. 
@@ -80,7 +80,7 @@ int main(){
       std::string x = s + ", really";
       std::cout << s << std::endl;
     }
-      std::cout << x << std::endl;
+      // std::cout << x << std::endl;
   }
 
   // Not a valid program. String object x is referenced outside of its scope. Which makes it so that the compiler thinks it's undefined.
@@ -94,6 +94,19 @@ int main(){
   //   }
   //     std::cout << x << std::endl;
   // }
+
+
+  // 1-6
+  std::cout << "What is your name?";
+  std::string name;
+  std::cin >> name;
+
+  std::cout << "Hello, " << name << std::endl << "And what is yours? ";
+  std::cin >> name;
+  std::cout << "Hello, " << name << "; nice to meet you too!" << std::endl;
+  // When writing two inputs at once, the program splits the strings by the space between it.
+  // Since it stops the cin when finding a whitespace, it just takes in the following one and loads it for the second cin >> name
+  // This refers back to the concept of flushing the buffer when explicitly told to do so. 
 
 
   return 0;
